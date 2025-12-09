@@ -17,3 +17,9 @@ body {
   padding-left: 0.5in;
   padding-right: 0.5in;
 }
+
+.left-and-right-justify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
