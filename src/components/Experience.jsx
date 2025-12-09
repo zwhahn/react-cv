@@ -3,11 +3,11 @@ import "../styles/experience.css";
 export function Experience() {
   return (
     <>
-      <div className="company-and-dates">
+      <div className="left-and-right-justify">
         <h3>Company</h3>
         <div>Month Year - Month Year</div>
       </div>
-      <div className="job-and-location">
+      <div className="left-and-right-justify">
         <div>Job</div>
         <div>Job Location</div>
       </div>

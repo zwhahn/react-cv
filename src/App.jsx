@@ -1,6 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Header } from "./components/Header";
 import { Experience } from "./components/Experience";
+import { Education } from "./components/Education";
+
 import "./styles/global.css";
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
           <Experience></Experience>
           <h2>Education</h2>
           <hr />
+          <Education></Education>
         </main>
       </div>
     </body>
