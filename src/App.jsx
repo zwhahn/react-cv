@@ -6,18 +6,24 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 
 import "./styles/global.css";
+import { useState } from "react";
 
 function App() {
+  const [editable, setEditable] = useState(true);
+
+  function handleEditClick() {
+    setEditable(!editable);
+  }
+
   return (
-    <body>
+    <>
+      <button onClick={handleEditClick}>{editable ? "Save" : "Edit"}</button>
       <div className="page">
         <Header></Header>
         <main>
           <h2>Experience</h2>
           <hr />
-          <Experience></Experience>
-          <Experience></Experience>
-          <Experience></Experience>
+          <Experience editable={editable}></Experience>
           <h2>Education</h2>
           <hr />
           <Education></Education>
@@ -30,7 +36,7 @@ function App() {
           <Skills></Skills>
         </main>
       </div>
-    </body>
+    </>
   );
 }
 
