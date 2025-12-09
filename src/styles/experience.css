@@ -1,0 +1,5 @@
+.company-and-dates, .job-and-location {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

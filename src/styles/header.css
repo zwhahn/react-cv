@@ -5,13 +5,13 @@ header {
     flex-direction: column;
 }
 
-ul {
+header ul {
     display: flex;
     list-style-type: none;
     gap: 20px;
     justify-content: center;
 }
 
-h1 {
+header h1 {
     text-align: center;
 }
