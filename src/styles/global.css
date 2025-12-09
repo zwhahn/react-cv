@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  background-color: bisque;
+  padding-left: 0.5in;
+  padding-right: 0.5in;
+}
