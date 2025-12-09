@@ -11,15 +11,17 @@ export function Experience({ editable }) {
   return (
     <>
       <div className="left-and-right-justify">
-        {editable ? (
-          <input
-            placeholder="Company Name"
-            value={companyName}
-            onChange={handleCompanyNameChange}
-          ></input>
-        ) : (
-          <h3>{companyName}</h3>
-        )}
+        <div className="h3-container">
+          {editable ? (
+            <input
+              placeholder="Company Name"
+              value={companyName}
+              onChange={handleCompanyNameChange}
+            ></input>
+          ) : (
+            <h3>{companyName}</h3>
+          )}
+        </div>
         <div>Month Year - Month Year</div>
       </div>
       <div className="left-and-right-justify">

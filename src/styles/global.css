@@ -1,8 +1,16 @@
+:root {
+  --white: #f2f2f2;
+  --black: #222222;
+  --box-shadow: rgba(34, 34, 34, 0.5);
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 body {
@@ -13,13 +21,30 @@ body {
 .page {
   width: 8.5in;
   height: 11in;
-  background-color: bisque;
+  padding-top: 0.1in;
   padding-left: 0.5in;
   padding-right: 0.5in;
+  box-shadow: 8px 8px 16px var(--box-shadow);
 }
 
 .left-and-right-justify {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: "— ";
+}
+
+.h3-container {
+  height: 24px;
+}
+
+.h3-container input {
+  font-size: 1.17em;
+  border: none;
+  background-color: lightgray;
+  font-weight: bold;
 }

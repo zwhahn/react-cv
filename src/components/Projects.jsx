@@ -6,9 +6,9 @@ export function Projects() {
         <div>Month Year - Month Year</div>
       </div>
       <ul>
-        <li> Here is a sentence describing a very impressive project I did</li>
-        <li> Here is a sentence describing a very impressive project I did</li>
-        <li> Here is a sentence describing a very impressive project I did</li>
+        <li>Here is a sentence describing a very impressive project I did</li>
+        <li>Here is a sentence describing a very impressive project I did</li>
+        <li>Here is a sentence describing a very impressive project I did</li>
       </ul>
     </>
   );
