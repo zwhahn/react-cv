@@ -11,17 +11,26 @@ import { useState } from "react";
 function App() {
   const [editable, setEditable] = useState(true);
   const [experiences, setExperiences] = useState([null]);
+  const [educations, setEducations] = useState([null]);
 
   function handleEditClick() {
     setEditable(!editable);
   }
 
-  function handleAddExperienceClick() {
-    setExperiences([...experiences, null]);
+  function handleAddElementClick(element) {
+    if (element === "experiences") {
+      setExperiences([...experiences, null]);
+    } else if (element === "educations") {
+      setEducations([...educations, null]);
+    }
   }
 
-  function handleRemoveExperienceClick() {
-    setExperiences([...experiences].slice(0, -1));
+  function handleRemoveElementClick(element) {
+    if (element === "experiences") {
+      setExperiences([...experiences].slice(0, -1));
+    } else if (element === "educations") {
+      setEducations([...educations].slice(0, -1));
+    }
   }
 
   return (
@@ -34,8 +43,12 @@ function App() {
             <h2>Experience</h2>
             {editable ? (
               <>
-                <button onClick={handleAddExperienceClick}>Add</button>
-                <button onClick={handleRemoveExperienceClick}>Remove</button>
+                <button onClick={() => handleAddElementClick("experiences")}>
+                  Add
+                </button>
+                <button onClick={() => handleRemoveElementClick("experiences")}>
+                  Remove
+                </button>
               </>
             ) : (
               <></>
@@ -45,9 +58,25 @@ function App() {
           {experiences.map((exp, i) => {
             return <Experience key={i} editable={editable}></Experience>;
           })}
-          <h2>Education</h2>
+          <div className="section-title">
+            <h2>Education</h2>
+            {editable ? (
+              <>
+                <button onClick={() => handleAddElementClick("educations")}>
+                  Add
+                </button>
+                <button onClick={() => handleRemoveElementClick("educations")}>
+                  Remove
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
           <hr />
-          <Education></Education>
+          {educations.map((exp, i) => {
+            return <Education key={i} editable={editable}></Education>;
+          })}
           <h2>Projects</h2>
           <hr />
           <Projects></Projects>
