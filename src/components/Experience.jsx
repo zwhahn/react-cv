@@ -6,6 +6,7 @@ export function Experience({ editable }) {
   const [startDate, setStartDate] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [jobLocation, setJobLocation] = useState("");
+  const [jobDescriptions, setJobDescriptions] = useState([""]);
 
   function handleCompanyNameChange(e) {
     setCompanyName(e.target.value);
@@ -18,6 +19,17 @@ export function Experience({ editable }) {
   }
   function handleJobLocationChange(e) {
     setJobLocation(e.target.value);
+  }
+
+  function handleBulletChange(e, index) {
+    console.log("typing");
+    const newBullets = [...jobDescriptions];
+    newBullets[index] = e.target.value;
+
+    let trimmed = newBullets.filter((bullet) => bullet.trim() != "");
+    trimmed.push("");
+
+    setJobDescriptions(trimmed);
   }
 
   return (
@@ -51,10 +63,15 @@ export function Experience({ editable }) {
             ></input>
           </div>
           <ul>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
+            {jobDescriptions.map((bullet, index) => (
+              <li key={index}>
+                <input
+                  placeholder="Job Description"
+                  value={bullet}
+                  onChange={(e) => handleBulletChange(e, index)}
+                ></input>
+              </li>
+            ))}
           </ul>
         </>
       ) : (
@@ -70,10 +87,9 @@ export function Experience({ editable }) {
             <div>{jobLocation}</div>
           </div>
           <ul>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
-            <li>Strong sentence describing what was done</li>
+            {jobDescriptions.map((bullet, index) => (
+              <li key={index}>{jobDescriptions}</li>
+            ))}
           </ul>
         </>
       )}
