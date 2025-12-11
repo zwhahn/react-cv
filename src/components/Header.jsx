@@ -1,6 +1,7 @@
+import { useState } from "react";
 import "../styles/header.css";
 
-export function Header() {
+export function Header({ editable }) {
   const links = [
     "Github",
     "LinkedIn",
@@ -10,9 +11,28 @@ export function Header() {
     "City",
   ];
 
+  const [name, setName] = useState("");
+  const [summary, setSummary] = useState("");
+
+  function handleChange(e, element) {
+    if (element === "name") {
+      setName(e.target.value);
+    } else if (element === "summary") {
+      setSummary(e.target.value);
+    }
+  }
+
   return (
     <header>
-      <h1>Zachary Hahn</h1>
+      {editable ? (
+        <input
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => handleChange(e, "name")}
+        ></input>
+      ) : (
+        <h1>{name}</h1>
+      )}
       <ul>
         {links.map((link) => {
           return (
@@ -22,11 +42,15 @@ export function Header() {
           );
         })}
       </ul>
-      <p>
-        This is a short description of my experience and what I am looking for.
-        It should not be verbose and should be 2 lines or shorter. This is where
-        you sell yourself!
-      </p>
+      {editable ? (
+        <input
+          placeholder="I am a software engineer with 3 years of experience..."
+          value={summary}
+          onChange={(e) => handleChange(e, "summary")}
+        ></input>
+      ) : (
+        <p>{summary}</p>
+      )}
     </header>
   );
 }
