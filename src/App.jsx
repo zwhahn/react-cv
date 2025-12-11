@@ -10,9 +10,18 @@ import { useState } from "react";
 
 function App() {
   const [editable, setEditable] = useState(true);
+  const [experiences, setExperiences] = useState([null]);
 
   function handleEditClick() {
     setEditable(!editable);
+  }
+
+  function handleAddExperienceClick() {
+    setExperiences([...experiences, null]);
+  }
+
+  function handleRemoveExperienceClick() {
+    setExperiences([...experiences].slice(0, -1));
   }
 
   return (
@@ -21,9 +30,21 @@ function App() {
       <div className="page">
         <Header></Header>
         <main>
-          <h2>Experience</h2>
+          <div className="section-title">
+            <h2>Experience</h2>
+            {editable ? (
+              <>
+                <button onClick={handleAddExperienceClick}>Add</button>
+                <button onClick={handleRemoveExperienceClick}>Remove</button>
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
           <hr />
-          <Experience editable={editable}></Experience>
+          {experiences.map((exp, i) => {
+            return <Experience key={i} editable={editable}></Experience>;
+          })}
           <h2>Education</h2>
           <hr />
           <Education></Education>

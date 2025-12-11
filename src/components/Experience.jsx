@@ -22,7 +22,6 @@ export function Experience({ editable }) {
   }
 
   function handleBulletChange(e, index) {
-    console.log("typing");
     const newBullets = [...jobDescriptions];
     newBullets[index] = e.target.value;
 

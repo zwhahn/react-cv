@@ -48,3 +48,8 @@ ul {
   background-color: lightgray;
   font-weight: bold;
 }
+
+.section-title {
+  display: flex;
+  gap: 20px;
+}
