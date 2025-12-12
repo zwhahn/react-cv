@@ -2,26 +2,42 @@ import { useState } from "react";
 import "../styles/skills.css";
 
 export function Skills({ editable }) {
-  // const [projectTitle, setProjectTitle] = useState("");
-  // const [projectDates, setProjectDates] = useState("");
-  // const [projectDescriptions, setProjectDescriptions] = useState([""]);
+  const [skillTitle, setSkillTitle] = useState("");
+  const [skillItems, setSkillItems] = useState("");
 
-  // function handleChange(e, element) {
-  //   if (element === "projectTitle") {
-  //     setProjectTitle(e.target.value);
-  //   } else if (element === "projectDates") {
-  //     setProjectDates(e.target.value);
-  //   }
-  // }
+  function handleChange(e, element) {
+    if (element === "skillType") {
+      setSkillTitle(e.target.value);
+    } else if (element === "skillItems") {
+      setSkillItems(e.target.value);
+    }
+  }
 
   return (
     <>
-      <div className="skill-line">
-        <h3>Languages: </h3>
-        <div>red, blue, green</div>
-      </div>
-      <h3>Frameworks & Libraries: </h3>
-      <h3>Tools & Platforms: </h3>
+      {editable ? (
+        <>
+          <div className="skill-line">
+            <input
+              placeholder="Languages"
+              value={skillTitle}
+              onChange={(e) => handleChange(e, "skillType")}
+            />
+            <input
+              placeholder="React, JavaScript, SQL, Python"
+              value={skillItems}
+              onChange={(e) => handleChange(e, "skillItems")}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="skill-line">
+            <h3>{skillTitle}</h3>
+            <div>{skillItems}</div>
+          </div>
+        </>
+      )}
     </>
   );
 }
