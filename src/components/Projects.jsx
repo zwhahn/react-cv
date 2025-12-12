@@ -60,9 +60,9 @@ export function Projects({ editable }) {
             <div>{projectDates}</div>
           </div>
           <ul>
-            {projectDescriptions.map((bullet, index) => (
-              <li key={index}>{bullet}</li>
-            ))}
+            {projectDescriptions.map((bullet, index) =>
+              bullet != "" ? <li key={index}>{bullet}</li> : <></>,
+            )}
           </ul>
         </>
       )}
