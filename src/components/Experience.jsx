@@ -87,7 +87,7 @@ export function Experience({ editable }) {
           </div>
           <ul>
             {jobDescriptions.map((bullet, index) => (
-              <li key={index}>{jobDescriptions}</li>
+              <li key={index}>{bullet}</li>
             ))}
           </ul>
         </>

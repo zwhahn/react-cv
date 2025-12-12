@@ -59,7 +59,7 @@ export function Projects({ editable }) {
           </div>
           <ul>
             {projectDescriptions.map((bullet, index) => (
-              <li key={index}>{projectDescriptions}</li>
+              <li key={index}>{bullet}</li>
             ))}
           </ul>
         </>
