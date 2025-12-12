@@ -44,6 +44,7 @@ export function Experience({ editable }) {
               ></input>
             </div>
             <input
+              className="right-justify-text"
               placeholder="Month YYYY - Month YYYY"
               value={startDate}
               onChange={handleStartDateChange}
@@ -56,6 +57,7 @@ export function Experience({ editable }) {
               onChange={handleJobChange}
             ></input>
             <input
+              className="right-justify-text"
               placeholder="Job Location"
               value={jobLocation}
               onChange={handleJobLocationChange}
@@ -65,6 +67,7 @@ export function Experience({ editable }) {
             {jobDescriptions.map((bullet, index) => (
               <li key={index}>
                 <input
+                  className="bullet-input"
                   placeholder="Job Description"
                   value={bullet}
                   onChange={(e) => handleBulletChange(e, index)}

@@ -14,3 +14,9 @@ header ul {
 header h1 {
   text-align: center;
 }
+
+.link-input-container {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}

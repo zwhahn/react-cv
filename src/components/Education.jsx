@@ -23,12 +23,15 @@ export function Education({ editable }) {
       {editable ? (
         <>
           <div className="left-and-right-justify">
+            <div className="h3-container">
+              <input
+                placeholder="School Name"
+                value={schoolName}
+                onChange={(e) => handleChange(e, "schoolName")}
+              ></input>
+            </div>
             <input
-              placeholder="School Name"
-              value={schoolName}
-              onChange={(e) => handleChange(e, "schoolName")}
-            ></input>
-            <input
+              className="right-justify-text"
               placeholder="School's Location (ex. Philadelphia)"
               value={schoolLocation}
               onChange={(e) => handleChange(e, "schoolLocation")}
@@ -41,6 +44,7 @@ export function Education({ editable }) {
               onChange={(e) => handleChange(e, "degree")}
             ></input>
             <input
+              className="right-justify-text"
               placeholder="Completion Date (Month YYYY)"
               value={completionDate}
               onChange={(e) => handleChange(e, "completionDate")}

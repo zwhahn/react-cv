@@ -18,11 +18,14 @@ export function Skills({ editable }) {
       {editable ? (
         <>
           <div className="skill-line">
-            <input
-              placeholder="Languages"
-              value={skillTitle}
-              onChange={(e) => handleChange(e, "skillType")}
-            />
+            <div className="h3-container">
+              <input
+                placeholder="Languages"
+                value={skillTitle}
+                onChange={(e) => handleChange(e, "skillType")}
+              />
+              :
+            </div>
             <input
               placeholder="React, JavaScript, SQL, Python"
               value={skillItems}
@@ -33,7 +36,7 @@ export function Skills({ editable }) {
       ) : (
         <>
           <div className="skill-line">
-            <h3>{skillTitle}</h3>
+            <h3>{skillTitle + ": "}</h3>
             <div>{skillItems}</div>
           </div>
         </>

@@ -51,14 +51,14 @@ export function Header({ editable }) {
           </div>
           <ul>
             {linkArray.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="link-input-container">
                 <input
-                  placeholder="Link"
+                  placeholder="Link (ex. Github)"
                   value={link.type}
                   onChange={(e) => handleLinkChange(e, index, "type")}
                 ></input>
                 <input
-                  placeholder="Link"
+                  placeholder="url"
                   value={link.value}
                   onChange={(e) => handleLinkChange(e, index, "link")}
                 ></input>

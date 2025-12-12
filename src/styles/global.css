@@ -34,7 +34,7 @@ body {
 }
 
 ul {
-  list-style-position: inside;
+  padding-left: 1.1em;
   list-style-type: "— ";
 }
 
@@ -66,4 +66,16 @@ input {
 .section-title {
   display: flex;
   gap: 20px;
+}
+
+.bullet-input {
+  width: 100%;
+  resize: vertical;
+  overflow: visible;
+  height: 1.4em;
+  font-size: 1em;
+}
+
+.right-justify-text {
+  text-align: right;
 }

@@ -34,6 +34,7 @@ export function Projects({ editable }) {
               onChange={(e) => handleChange(e, "projectTitle")}
             ></input>
             <input
+              className="right-justify-text"
               placeholder="Month YYYY - Month YYYY"
               value={projectDates}
               onChange={(e) => handleChange(e, "projectDates")}
@@ -43,6 +44,7 @@ export function Projects({ editable }) {
             {projectDescriptions.map((bullet, index) => (
               <li key={index}>
                 <input
+                  className="bullet-input"
                   placeholder="Project Description"
                   value={bullet}
                   onChange={(e) => handleBulletChange(e, index)}
