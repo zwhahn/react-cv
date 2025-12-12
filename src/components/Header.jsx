@@ -42,11 +42,13 @@ export function Header({ editable }) {
     <header>
       {editable ? (
         <>
-          <input
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => handleChange(e, "name")}
-          ></input>
+          <div className="h1-container">
+            <input
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => handleChange(e, "name")}
+            ></input>
+          </div>
           <ul>
             {linkArray.map((link, index) => (
               <li key={index}>
@@ -66,7 +68,9 @@ export function Header({ editable }) {
         </>
       ) : (
         <>
-          <h1>{name}</h1>
+          <div className="h1-container">
+            <h1>{name}</h1>
+          </div>
           <ul>
             {linkArray.map((link, index) =>
               link.isLink ? (

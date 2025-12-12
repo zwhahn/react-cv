@@ -38,15 +38,29 @@ ul {
   list-style-type: "— ";
 }
 
+.h1-container {
+  display: flex;
+  align-self: center;
+}
+
+.h1-container input {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 .h3-container {
   height: 24px;
 }
 
 .h3-container input {
   font-size: 1.17em;
+  font-weight: bold;
+}
+
+input {
   border: none;
   background-color: lightgray;
-  font-weight: bold;
 }
 
 .section-title {
