@@ -9,8 +9,31 @@ import "./styles/global.css";
 import { useState } from "react";
 
 function App() {
+  const initialExperiences = [
+    {
+      companyName: "PA Consulting",
+      startDate: "September 2022 - October 2025",
+      jobTitle: "Mechanical Engineer / Software Engineer",
+      jobLocation: "San Francisco, CA",
+      jobDescriptions: [
+        "Contributed to all phases of the product development life cycle, from concept ideation and prototyping to production, for clients in industries including medical devices, consumer electronics, and food manufacturing",
+        "Built and deployed a Python-based data transfer system to migrate all project data from legacy software, leveraging data acquisition APIs to streamline information flow and improve reliability",
+        "Designed and programmed an autonomous robot using ROS2 and OpenCV on a Linux-based Raspberry Pi, enabling simultaneous localization and mapping (SLAM) and real-time object detection",
+        "Led engineering development of an automated in-store delivery system, developing multiple proof-of-concept prototypes to evaluate UX and technical trade-offs, and delivering the alpha design for client review",
+      ],
+    },
+  ];
+
+  const emptyExperience = {
+    companyName: "",
+    startDate: "",
+    jobTitle: "",
+    jobLocation: "",
+    jobDescriptions: [""],
+  };
+
   const [editable, setEditable] = useState(false);
-  const [experiences, setExperiences] = useState([null]);
+  const [experiences, setExperiences] = useState(initialExperiences);
   const [educations, setEducations] = useState([null]);
   const [projects, setProjects] = useState([null]);
   const [skills, setSkills] = useState([null]);
@@ -21,7 +44,7 @@ function App() {
 
   function handleAddElementClick(element) {
     if (element === "experiences") {
-      setExperiences([...experiences, null]);
+      setExperiences([...experiences, emptyExperience]);
     } else if (element === "educations") {
       setEducations([...educations, null]);
     } else if (element === "projects") {
@@ -76,7 +99,13 @@ function App() {
           </div>
           <hr />
           {experiences.map((exp, i) => {
-            return <Experience key={i} editable={editable}></Experience>;
+            return (
+              <Experience
+                key={i}
+                editable={editable}
+                initialData={exp}
+              ></Experience>
+            );
           })}
           <div className="section-title">
             <h2>EDUCATION</h2>

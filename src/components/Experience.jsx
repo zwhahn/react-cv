@@ -1,12 +1,23 @@
 import { useState } from "react";
 import "../styles/experience.css";
 
-export function Experience({ editable }) {
-  const [companyName, setCompanyName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
-  const [jobLocation, setJobLocation] = useState("");
-  const [jobDescriptions, setJobDescriptions] = useState([""]);
+export function Experience({
+  editable,
+  initialData = {
+    companyName: "",
+    startDate: "",
+    jobTitle: "",
+    jobLocation: "",
+    jobDescriptions: [""],
+  },
+}) {
+  const [companyName, setCompanyName] = useState(initialData.companyName);
+  const [startDate, setStartDate] = useState(initialData.startDate);
+  const [jobTitle, setJobTitle] = useState(initialData.jobTitle);
+  const [jobLocation, setJobLocation] = useState(initialData.jobLocation);
+  const [jobDescriptions, setJobDescriptions] = useState(
+    initialData.jobDescriptions,
+  );
 
   function handleCompanyNameChange(e) {
     setCompanyName(e.target.value);
