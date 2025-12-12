@@ -4,6 +4,14 @@ header {
   flex-direction: column;
 }
 
+#header-name {
+  font-size: 2em;
+}
+
+header a {
+  color: blue;
+}
+
 header ul {
   display: flex;
   list-style-type: none;
@@ -16,7 +24,17 @@ header h1 {
 }
 
 .link-input-container {
+  width: 100px;
   display: flex;
   flex-direction: column;
-  background-color: red;
+  gap: 1px;
+}
+
+.personal-summary {
+  padding: 4px 0px 4px 0px;
+  text-justify: none;
+}
+
+header ul {
+  padding: 4px;
 }

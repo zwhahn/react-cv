@@ -45,81 +45,115 @@ function App() {
 
   return (
     <>
-      <button onClick={handleEditClick}>{editable ? "Save" : "Edit"}</button>
+      <button id="edit-btn" onClick={handleEditClick}>
+        {editable ? "Save" : "Edit"}
+      </button>
       <div className="page">
         <Header editable={editable}></Header>
         <main>
           <div className="section-title">
-            <h2>Experience</h2>
-            {editable ? (
-              <>
-                <button onClick={() => handleAddElementClick("experiences")}>
-                  Add
-                </button>
-                <button onClick={() => handleRemoveElementClick("experiences")}>
-                  Remove
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
+            <h2>EXPERIENCE</h2>
+            <div className="section-btns-container">
+              {editable ? (
+                <>
+                  <button
+                    className="add-btn"
+                    onClick={() => handleAddElementClick("experiences")}
+                  >
+                    Add
+                  </button>
+                  <button
+                    className="remove-btn"
+                    onClick={() => handleRemoveElementClick("experiences")}
+                  >
+                    Remove
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
           <hr />
           {experiences.map((exp, i) => {
             return <Experience key={i} editable={editable}></Experience>;
           })}
           <div className="section-title">
-            <h2>Education</h2>
-            {editable ? (
-              <>
-                <button onClick={() => handleAddElementClick("educations")}>
-                  Add
-                </button>
-                <button onClick={() => handleRemoveElementClick("educations")}>
-                  Remove
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
+            <h2>EDUCATION</h2>
+            <div className="section-btns-container">
+              {editable ? (
+                <>
+                  <button
+                    className="add-btn"
+                    onClick={() => handleAddElementClick("educations")}
+                  >
+                    Add
+                  </button>
+                  <button
+                    className="remove-btn"
+                    onClick={() => handleRemoveElementClick("educations")}
+                  >
+                    Remove
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
           <hr />
           {educations.map((exp, i) => {
             return <Education key={i} editable={editable}></Education>;
           })}
           <div className="section-title">
-            <h2>Projects</h2>
-            {editable ? (
-              <>
-                <button onClick={() => handleAddElementClick("projects")}>
-                  Add
-                </button>
-                <button onClick={() => handleRemoveElementClick("projects")}>
-                  Remove
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
+            <h2>PROJECTS</h2>
+            <div className="section-btns-container">
+              {editable ? (
+                <>
+                  <button
+                    className="add-btn"
+                    onClick={() => handleAddElementClick("projects")}
+                  >
+                    Add
+                  </button>
+                  <button
+                    className="remove-btn"
+                    onClick={() => handleRemoveElementClick("projects")}
+                  >
+                    Remove
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
           <hr />
           {projects.map((exp, i) => {
             return <Projects key={i} editable={editable}></Projects>;
           })}
           <div className="section-title">
-            <h2>Skills</h2>
-            {editable ? (
-              <>
-                <button onClick={() => handleAddElementClick("skills")}>
-                  Add
-                </button>
-                <button onClick={() => handleRemoveElementClick("skills")}>
-                  Remove
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
+            <h2>SKILLS</h2>
+            <div className="section-btns-container">
+              {editable ? (
+                <>
+                  <button
+                    className="add-btn"
+                    onClick={() => handleAddElementClick("skills")}
+                  >
+                    Add
+                  </button>
+                  <button
+                    className="remove-btn"
+                    onClick={() => handleRemoveElementClick("skills")}
+                  >
+                    Remove
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
           <hr />
           {skills.map((exp, i) => {

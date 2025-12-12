@@ -85,10 +85,10 @@ export function Experience({ editable }) {
             <div>{startDate}</div>
           </div>
           <div className="left-and-right-justify">
-            <div>{jobTitle}</div>
+            <div className="italicize">{jobTitle}</div>
             <div>{jobLocation}</div>
           </div>
-          <ul>
+          <ul className="line-space-lg">
             {jobDescriptions.map((bullet, index) =>
               bullet != "" ? <li key={index}>{bullet}</li> : <></>,
             )}

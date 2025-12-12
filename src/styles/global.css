@@ -11,6 +11,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--white);
   color: var(--black);
+  font-size: small;
 }
 
 body {
@@ -19,6 +20,8 @@ body {
 }
 
 .page {
+  margin-top: 30px;
+  margin-bottom: 40px;
   width: 8.5in;
   height: 11in;
   padding-top: 0.1in;
@@ -38,34 +41,53 @@ ul {
   list-style-type: "— ";
 }
 
+li {
+  padding-top: 3px;
+}
+
 .h1-container {
   display: flex;
   align-self: center;
+}
+
+h2 {
+  padding: 10px 0px 2px 0px;
 }
 
 .h1-container input {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 2px;
 }
 
 .h3-container {
   height: 24px;
+  padding-top: 6px;
 }
 
 .h3-container input {
-  font-size: 1.17em;
+  /* font-size: 1.17em; */
   font-weight: bold;
 }
 
 input {
-  border: none;
-  background-color: lightgray;
+  border: 1px solid gray;
+  padding-left: 5px;
+  background-color: rgb(223, 220, 220);
 }
 
 .section-title {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-btns-container {
+  display: flex;
+  align-self: center;
+  gap: 10px;
+  padding-top: 8px;
 }
 
 .bullet-input {
@@ -78,4 +100,45 @@ input {
 
 .right-justify-text {
   text-align: right;
+}
+
+.small-font {
+  font-size: small;
+}
+
+.italicize {
+  font-style: italic;
+}
+
+.line-space-lg {
+  line-height: 1.4rem;
+}
+
+#edit-btn {
+  position: absolute;
+  font-size: 1.4em;
+  padding: 10px 20px;
+  transform: translate(-130%, 90%);
+}
+
+#edit-btn:hover {
+  background-color: lightgreen;
+  transform: translate(-130%, 90%) scale(110%);
+}
+
+button {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: lightgreen;
+  transform: scale(110%);
+}
+
+.remove-btn:hover {
+  background-color: lightcoral;
+  transform: scale(110%);
 }

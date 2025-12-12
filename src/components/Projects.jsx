@@ -59,7 +59,7 @@ export function Projects({ editable }) {
             <h3>{projectTitle}</h3>
             <div>{projectDates}</div>
           </div>
-          <ul>
+          <ul className="line-space-lg">
             {projectDescriptions.map((bullet, index) =>
               bullet != "" ? <li key={index}>{bullet}</li> : <></>,
             )}
