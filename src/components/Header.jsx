@@ -2,15 +2,40 @@ import { useState } from "react";
 import "../styles/header.css";
 
 export function Header({ editable }) {
-  const [name, setName] = useState("");
-  const [summary, setSummary] = useState("");
-  const [linkArray, setLinkArray] = useState([
+  const [name, setName] = useState("Zachary Hahn");
+  const [summary, setSummary] = useState(
+    "Experienced engineer with a background in hardware and software product development, eager to apply strong technical and creative problem-solving skills to make an impact as a software engineer.",
+  );
+
+  const startingLinkArray = [
     {
-      type: "",
+      type: "Github",
+      value: "https://github.com/zwhahn",
+      isLink: true,
+    },
+    {
+      type: "LinkedIn",
+      value: "https://www.linkedin.com/in/zachary-hahn/",
+      isLink: true,
+    },
+    {
+      type: "zwhahn@gmail.com",
       value: "",
       isLink: false,
     },
-  ]);
+    {
+      type: "215-821-4355",
+      value: "",
+      isLink: false,
+    },
+    {
+      type: "New York City, NY",
+      value: "",
+      isLink: false,
+    },
+  ];
+
+  const [linkArray, setLinkArray] = useState(startingLinkArray);
 
   function handleChange(e, element) {
     if (element === "name") {

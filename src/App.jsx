@@ -9,7 +9,7 @@ import "./styles/global.css";
 import { useState } from "react";
 
 function App() {
-  const [editable, setEditable] = useState(true);
+  const [editable, setEditable] = useState(false);
   const [experiences, setExperiences] = useState([null]);
   const [educations, setEducations] = useState([null]);
   const [projects, setProjects] = useState([null]);
