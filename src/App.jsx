@@ -22,6 +22,16 @@ function App() {
         "Led engineering development of an automated in-store delivery system, developing multiple proof-of-concept prototypes to evaluate UX and technical trade-offs, and delivering the alpha design for client review",
       ],
     },
+    {
+      companyName: "NASA Jet Propulsion Laboratory",
+      startDate: "June 2021 - November 2021",
+      jobTitle: "Robotics Co-op",
+      jobLocation: "Remote",
+      jobDescriptions: [
+        "Assessed the proposed Mars Rover Sample Transfer System (STS) for reliability and complexity improvements, presenting viability assessments and recommendations to chief engineers",
+        " Updated the Mars Rover STS model to be flexible in both NASA design softwares, enabling easier and faster system manipulation for future investigations",
+      ],
+    },
   ];
 
   const emptyExperience = {
