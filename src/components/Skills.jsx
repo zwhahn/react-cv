@@ -1,9 +1,15 @@
 import { useState } from "react";
 import "../styles/skills.css";
 
-export function Skills({ editable }) {
-  const [skillTitle, setSkillTitle] = useState("");
-  const [skillItems, setSkillItems] = useState("");
+export function Skills({
+  editable,
+  initialData = {
+    skillTitle: "",
+    skillItems: "",
+  },
+}) {
+  const [skillTitle, setSkillTitle] = useState(initialData.skillTitle);
+  const [skillItems, setSkillItems] = useState(initialData.skillItems);
 
   function handleChange(e, element) {
     if (element === "skillType") {

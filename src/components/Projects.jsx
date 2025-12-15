@@ -1,9 +1,18 @@
 import { useState } from "react";
 
-export function Projects({ editable }) {
-  const [projectTitle, setProjectTitle] = useState("");
-  const [projectDates, setProjectDates] = useState("");
-  const [projectDescriptions, setProjectDescriptions] = useState([""]);
+export function Projects({
+  editable,
+  initialData = {
+    projectTitle: "",
+    projectDates: "",
+    projectDescriptions: [""],
+  },
+}) {
+  const [projectTitle, setProjectTitle] = useState(initialData.projectTitle);
+  const [projectDates, setProjectDates] = useState(initialData.projectDates);
+  const [projectDescriptions, setProjectDescriptions] = useState(
+    initialData.projectDescriptions,
+  );
 
   function handleChange(e, element) {
     if (element === "projectTitle") {

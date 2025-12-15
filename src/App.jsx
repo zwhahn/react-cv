@@ -51,11 +51,81 @@ function App() {
     jobDescriptions: [""],
   };
 
+  const initialEducation = [
+    {
+      schoolName: "University of Pennsylvania",
+      schoolLocation: "Philadelphia, PA",
+      degree: "Bachelor of Science in Mechanical Engineering",
+      completionDate: "May 2021",
+    },
+    {
+      schoolName: "University of Pennsylvania",
+      schoolLocation: "Philadelphia, PA",
+      degree: "Master of Science in Robotics",
+      completionDate: "May 2022",
+    },
+  ];
+
+  const emptyEducation = {
+    schoolName: "",
+    schoolLocation: "",
+    degree: "",
+    completionDate: "",
+  };
+
+  const initialProject = [
+    {
+      projectTitle: "WildcardWendsday.com",
+      projectDates: "January 2025 - Present",
+      projectDescriptions: [
+        "Developed full-stack web application to randomly select nearby restaurants for team outings using HTML, JavaScript, and CSS with Tailwind CSS and daisyUI for resopnsive UI design",
+        "Integrated Google Maps Places API to query nearby restaurants with configurable search radius",
+        "Deployed serverless backend on Netlify",
+      ],
+    },
+    {
+      projectTitle: "Paint-By-Number Generator",
+      projectDates: "December 2023 - June 2024",
+      projectDescriptions: [
+        "Built Python application that converts images into paint-by-number templates, using OpenCV for image processing",
+        'Designed interactive Tkinter-based GUI integrating live camera feed and USB printer drivers to create "photo booth" experience for instant template generation',
+        "Showcased at SF Design Week 2024, where users generated and printed 100+ personalized templates",
+      ],
+    },
+  ];
+
+  const emptyProject = {
+    projectTitle: "",
+    projectDates: "",
+    projectDescriptions: "",
+  };
+
+  const initialSkill = [
+    {
+      skillTitle: "Languages",
+      skillItems: "React, Python, JavaScript, SQL, C++, HTML, CSS",
+    },
+    {
+      skillTitle: "Frameworks & Libraries",
+      skillItems: "Tailwind CSS, Bootstrap, Tkinter, ROS2, OpenCV",
+    },
+    {
+      skillTitle: "Tools & Platforms",
+      skillItems:
+        "Git, Linux, Netlify, Webpack, Google Maps API, Raspberry Pi, Arduino",
+    },
+  ];
+
+  const emptySkill = {
+    skillTitle: "",
+    skillItems: "",
+  };
+
   const [editable, setEditable] = useState(false);
   const [experiences, setExperiences] = useState(initialExperiences);
-  const [educations, setEducations] = useState([null]);
-  const [projects, setProjects] = useState([null]);
-  const [skills, setSkills] = useState([null]);
+  const [educations, setEducations] = useState(initialEducation);
+  const [projects, setProjects] = useState(initialProject);
+  const [skills, setSkills] = useState(initialSkill);
 
   function handleEditClick() {
     setEditable(!editable);
@@ -65,11 +135,11 @@ function App() {
     if (element === "experiences") {
       setExperiences([...experiences, emptyExperience]);
     } else if (element === "educations") {
-      setEducations([...educations, null]);
+      setEducations([...educations, emptyEducation]);
     } else if (element === "projects") {
-      setProjects([...projects, null]);
+      setProjects([...projects, emptyProject]);
     } else if (element === "skills") {
-      setSkills([...skills, null]);
+      setSkills([...skills, emptySkill]);
     }
   }
 
@@ -151,7 +221,13 @@ function App() {
           </div>
           <hr />
           {educations.map((exp, i) => {
-            return <Education key={i} editable={editable}></Education>;
+            return (
+              <Education
+                key={i}
+                editable={editable}
+                initialData={exp}
+              ></Education>
+            );
           })}
           <div className="section-title">
             <h2>PROJECTS</h2>
@@ -178,7 +254,13 @@ function App() {
           </div>
           <hr />
           {projects.map((exp, i) => {
-            return <Projects key={i} editable={editable}></Projects>;
+            return (
+              <Projects
+                key={i}
+                editable={editable}
+                initialData={exp}
+              ></Projects>
+            );
           })}
           <div className="section-title">
             <h2>SKILLS</h2>
@@ -205,7 +287,9 @@ function App() {
           </div>
           <hr />
           {skills.map((exp, i) => {
-            return <Skills key={i} editable={editable}></Skills>;
+            return (
+              <Skills key={i} editable={editable} initialData={exp}></Skills>
+            );
           })}
         </main>
       </div>

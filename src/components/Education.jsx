@@ -1,11 +1,23 @@
 import { useState } from "react";
 import "../styles/education.css";
 
-export function Education({ editable }) {
-  const [schoolName, setSchoolName] = useState("");
-  const [schoolLocation, setSchoolLocation] = useState("");
-  const [degree, setDegree] = useState("");
-  const [completionDate, setCompletionDate] = useState("");
+export function Education({
+  editable,
+  initialData = {
+    schoolName: "",
+    schoolLocation: "",
+    degree: "",
+    completionDate: "",
+  },
+}) {
+  const [schoolName, setSchoolName] = useState(initialData.schoolName);
+  const [schoolLocation, setSchoolLocation] = useState(
+    initialData.schoolLocation,
+  );
+  const [degree, setDegree] = useState(initialData.degree);
+  const [completionDate, setCompletionDate] = useState(
+    initialData.completionDate,
+  );
 
   function handleChange(e, element) {
     if (element === "schoolName") {
