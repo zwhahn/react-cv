@@ -42,7 +42,9 @@ export function Skills({
       ) : (
         <>
           <div className="skill-line">
-            <h3>{skillTitle + ": "}</h3>
+            <div className="h3-container">
+              <h3>{skillTitle + ": "}</h3>
+            </div>
             <div>{skillItems}</div>
           </div>
         </>

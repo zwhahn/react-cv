@@ -66,7 +66,9 @@ export function Education({
       ) : (
         <>
           <div className="left-and-right-justify">
-            <h3>{schoolName}</h3>
+            <div className="h3-container">
+              <h3>{schoolName}</h3>
+            </div>
             <div>{schoolLocation}</div>
           </div>
           <div className="left-and-right-justify">

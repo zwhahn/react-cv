@@ -37,11 +37,13 @@ export function Projects({
       {editable ? (
         <>
           <div className="left-and-right-justify">
-            <input
-              placeholder="Project Title"
-              value={projectTitle}
-              onChange={(e) => handleChange(e, "projectTitle")}
-            ></input>
+            <div className="h3-container">
+              <input
+                placeholder="Project Title"
+                value={projectTitle}
+                onChange={(e) => handleChange(e, "projectTitle")}
+              ></input>
+            </div>
             <input
               className="right-justify-text"
               placeholder="Month YYYY - Month YYYY"
@@ -65,7 +67,9 @@ export function Projects({
       ) : (
         <>
           <div className="left-and-right-justify">
-            <h3>{projectTitle}</h3>
+            <div className="h3-container">
+              <h3>{projectTitle}</h3>
+            </div>
             <div>{projectDates}</div>
           </div>
           <ul className="line-space-lg">
