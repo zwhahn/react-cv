@@ -32,6 +32,15 @@ function App() {
         " Updated the Mars Rover STS model to be flexible in both NASA design softwares, enabling easier and faster system manipulation for future investigations",
       ],
     },
+    {
+      companyName: "University of Pennslvania",
+      startDate: "January 2021 - November 2022",
+      jobTitle: "Graduate Teaching Assistant",
+      jobLocation: "Philadelphia, PA",
+      jobDescriptions: [
+        "Led labs, managed student projects, and developed course materials for Integrated Computer-Aided Design",
+      ],
+    },
   ];
 
   const emptyExperience = {
