@@ -4,6 +4,7 @@ import "../styles/skills.css";
 export function Skills({
   editable,
   initialData = {
+    id: "",
     skillTitle: "",
     skillItems: "",
   },

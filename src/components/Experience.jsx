@@ -4,6 +4,7 @@ import "../styles/experience.css";
 export function Experience({
   editable,
   initialData = {
+    id: "",
     companyName: "",
     startDate: "",
     jobTitle: "",

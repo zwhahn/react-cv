@@ -1,52 +1,28 @@
-import { useState } from "react";
 import "../styles/header.css";
 
-export function Header({ editable }) {
-  const [name, setName] = useState("Zachary Hahn");
-  const [summary, setSummary] = useState(
-    "Experienced engineer with a background in hardware and software product development, eager to apply strong technical and creative problem-solving skills to make an impact as a software engineer.",
-  );
-
-  const startingLinkArray = [
-    {
-      type: "Github",
-      value: "https://github.com/zwhahn",
-      isLink: true,
-    },
-    {
-      type: "LinkedIn",
-      value: "https://www.linkedin.com/in/zachary-hahn/",
-      isLink: true,
-    },
-    {
-      type: "zwhahn@gmail.com",
-      value: "",
-      isLink: false,
-    },
-    {
-      type: "215-821-4355",
-      value: "",
-      isLink: false,
-    },
-    {
-      type: "New York City, NY",
-      value: "",
-      isLink: false,
-    },
-  ];
-
-  const [linkArray, setLinkArray] = useState(startingLinkArray);
+export function Header({
+  editable,
+  header = {
+    name: "",
+    summary: "",
+    linkArray: [{ type: "", value: "", isLink: false }],
+  },
+  setHeader = { setHeader },
+}) {
+  function updateHeader(patch) {
+    setHeader([{ ...header, ...patch }]);
+  }
 
   function handleChange(e, element) {
     if (element === "name") {
-      setName(e.target.value);
+      updateHeader({ name: e.target.value });
     } else if (element === "summary") {
-      setSummary(e.target.value);
+      updateHeader({ summary: e.target.value });
     }
   }
 
   function handleLinkChange(e, index, dataField) {
-    const newLinks = [...linkArray];
+    const newLinks = [...header.linkArray];
     if (dataField === "type") {
       newLinks[index].type = e.target.value;
     } else if (dataField === "link") {
@@ -60,7 +36,7 @@ export function Header({ editable }) {
     let trimmed = newLinks.filter((link) => link.type.trim() != "");
     trimmed.push({ type: "", value: "", isLink: false });
 
-    setLinkArray(trimmed);
+    updateHeader({ linkArray: trimmed });
   }
 
   return (
@@ -70,12 +46,12 @@ export function Header({ editable }) {
           <div className="h1-container">
             <input
               placeholder="Your Name"
-              value={name}
+              value={header.name}
               onChange={(e) => handleChange(e, "name")}
             ></input>
           </div>
           <ul>
-            {linkArray.map((link, index) => (
+            {header.linkArray.map((link, index) => (
               <li key={index} className="link-input-container">
                 <input
                   placeholder="Link (ex. Github)"
@@ -94,10 +70,10 @@ export function Header({ editable }) {
       ) : (
         <>
           <div className="h1-container">
-            <h1 id="header-name">{name}</h1>
+            <h1 id="header-name">{header.name}</h1>
           </div>
           <ul className="small-font">
-            {linkArray.map((link, index) =>
+            {header.linkArray.map((link, index) =>
               link.isLink ? (
                 <li key={index}>
                   <a href={link.value}>{link.type}</a>
@@ -114,11 +90,11 @@ export function Header({ editable }) {
           <input
             className="bullet-input"
             placeholder="I am a software engineer with 3 years of experience..."
-            value={summary}
+            value={header.summary}
             onChange={(e) => handleChange(e, "summary")}
           ></input>
         ) : (
-          <p>{summary}</p>
+          <p>{header.summary}</p>
         )}
       </div>
     </header>

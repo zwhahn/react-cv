@@ -4,6 +4,7 @@ import "../styles/education.css";
 export function Education({
   editable,
   initialData = {
+    id: "",
     schoolName: "",
     schoolLocation: "",
     degree: "",

@@ -3,6 +3,7 @@ import { useState } from "react";
 export function Projects({
   editable,
   initialData = {
+    id: "",
     projectTitle: "",
     projectDates: "",
     projectDescriptions: [""],

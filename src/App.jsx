@@ -9,8 +9,54 @@ import "./styles/global.css";
 import { useState } from "react";
 
 function App() {
+  const initialHeader = [
+    {
+      id: crypto.randomUUID(),
+      name: "Zachary Hahn",
+      summary:
+        "Experienced engineer with a background in hardware and software product development, eager to apply strong technical and creative problem-solving skills to make an impact as a software engineer.",
+      linkArray: [
+        {
+          type: "Github",
+          value: "https://github.com/zwhahn",
+          isLink: true,
+        },
+        {
+          type: "LinkedIn",
+          value: "https://www.linkedin.com/in/zachary-hahn/",
+          isLink: true,
+        },
+        {
+          type: "zwhahn@gmail.com",
+          value: "",
+          isLink: false,
+        },
+        {
+          type: "215-821-4355",
+          value: "",
+          isLink: false,
+        },
+        {
+          type: "New York City, NY",
+          value: "",
+          isLink: false,
+        },
+      ],
+    },
+  ];
+
+  const emptyHeader = [
+    {
+      id: crypto.randomUUID(),
+      name: "",
+      summary: "",
+      linkArray: [{ type: "", value: "", isLink: false }],
+    },
+  ];
+
   const initialExperiences = [
     {
+      id: crypto.randomUUID(),
       companyName: "PA Consulting",
       startDate: "September 2022 - October 2025",
       jobTitle: "Mechanical Engineer / Software Engineer",
@@ -23,6 +69,7 @@ function App() {
       ],
     },
     {
+      id: crypto.randomUUID(),
       companyName: "NASA Jet Propulsion Laboratory",
       startDate: "June 2021 - November 2021",
       jobTitle: "Robotics Co-op",
@@ -33,6 +80,7 @@ function App() {
       ],
     },
     {
+      id: crypto.randomUUID(),
       companyName: "University of Pennslvania",
       startDate: "January 2021 - November 2022",
       jobTitle: "Graduate Teaching Assistant",
@@ -44,6 +92,7 @@ function App() {
   ];
 
   const emptyExperience = {
+    id: crypto.randomUUID(),
     companyName: "",
     startDate: "",
     jobTitle: "",
@@ -53,12 +102,14 @@ function App() {
 
   const initialEducation = [
     {
+      id: crypto.randomUUID(),
       schoolName: "University of Pennsylvania",
       schoolLocation: "Philadelphia, PA",
       degree: "Bachelor of Science in Mechanical Engineering",
       completionDate: "May 2021",
     },
     {
+      id: crypto.randomUUID(),
       schoolName: "University of Pennsylvania",
       schoolLocation: "Philadelphia, PA",
       degree: "Master of Science in Robotics",
@@ -67,6 +118,7 @@ function App() {
   ];
 
   const emptyEducation = {
+    id: crypto.randomUUID(),
     schoolName: "",
     schoolLocation: "",
     degree: "",
@@ -75,6 +127,7 @@ function App() {
 
   const initialProject = [
     {
+      id: crypto.randomUUID(),
       projectTitle: "WildcardWendsday.com",
       projectDates: "January 2025 - Present",
       projectDescriptions: [
@@ -84,6 +137,7 @@ function App() {
       ],
     },
     {
+      id: crypto.randomUUID(),
       projectTitle: "Paint-By-Number Generator",
       projectDates: "December 2023 - June 2024",
       projectDescriptions: [
@@ -95,21 +149,25 @@ function App() {
   ];
 
   const emptyProject = {
+    id: crypto.randomUUID(),
     projectTitle: "",
     projectDates: "",
-    projectDescriptions: "",
+    projectDescriptions: [""],
   };
 
   const initialSkill = [
     {
+      id: crypto.randomUUID(),
       skillTitle: "Languages",
       skillItems: "React, Python, JavaScript, SQL, C++, HTML, CSS",
     },
     {
+      id: crypto.randomUUID(),
       skillTitle: "Frameworks & Libraries",
       skillItems: "Tailwind CSS, Bootstrap, Tkinter, ROS2, OpenCV",
     },
     {
+      id: crypto.randomUUID(),
       skillTitle: "Tools & Platforms",
       skillItems:
         "Git, Linux, Netlify, Webpack, Google Maps API, Raspberry Pi, Arduino",
@@ -117,11 +175,13 @@ function App() {
   ];
 
   const emptySkill = {
+    id: crypto.randomUUID(),
     skillTitle: "",
     skillItems: "",
   };
 
   const [editable, setEditable] = useState(false);
+  const [header, setHeader] = useState(initialHeader);
   const [experiences, setExperiences] = useState(initialExperiences);
   const [educations, setEducations] = useState(initialEducation);
   const [projects, setProjects] = useState(initialProject);
@@ -129,6 +189,14 @@ function App() {
 
   function handleEditClick() {
     setEditable(!editable);
+  }
+
+  function clearAll() {
+    setHeader(emptyHeader);
+    setExperiences([emptyExperience]);
+    setEducations([emptyEducation]);
+    setProjects([emptyProject]);
+    setSkills([emptySkill]);
   }
 
   function handleAddElementClick(element) {
@@ -162,7 +230,9 @@ function App() {
           {editable ? "Save" : "Edit"}
         </button>
         {editable ? (
-          ""
+          <button className="btn clear-all-btn" onClick={clearAll}>
+            Clear All
+          </button>
         ) : (
           <button className="btn print-btn" onClick={() => window.print()}>
             Print
@@ -170,7 +240,11 @@ function App() {
         )}
       </div>
       <div className="page">
-        <Header editable={editable}></Header>
+        <Header
+          editable={editable}
+          header={header[0]}
+          setHeader={setHeader}
+        ></Header>
         <main>
           <div className="section-title">
             <h2>EXPERIENCE</h2>
@@ -196,10 +270,10 @@ function App() {
             </div>
           </div>
           <hr />
-          {experiences.map((exp, i) => {
+          {experiences.map((exp) => {
             return (
               <Experience
-                key={i}
+                key={exp.id}
                 editable={editable}
                 initialData={exp}
               ></Experience>
@@ -229,10 +303,10 @@ function App() {
             </div>
           </div>
           <hr />
-          {educations.map((exp, i) => {
+          {educations.map((exp) => {
             return (
               <Education
-                key={i}
+                key={exp.id}
                 editable={editable}
                 initialData={exp}
               ></Education>
@@ -262,10 +336,10 @@ function App() {
             </div>
           </div>
           <hr />
-          {projects.map((exp, i) => {
+          {projects.map((exp) => {
             return (
               <Projects
-                key={i}
+                key={exp.id}
                 editable={editable}
                 initialData={exp}
               ></Projects>
@@ -295,9 +369,13 @@ function App() {
             </div>
           </div>
           <hr />
-          {skills.map((exp, i) => {
+          {skills.map((exp) => {
             return (
-              <Skills key={i} editable={editable} initialData={exp}></Skills>
+              <Skills
+                key={exp.id}
+                editable={editable}
+                initialData={exp}
+              ></Skills>
             );
           })}
         </main>
