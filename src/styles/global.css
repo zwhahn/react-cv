@@ -139,6 +139,10 @@ input {
   background-color: lightgrey;
 }
 
+.clear-all-btn:hover {
+  background-color: lightcoral;
+}
+
 button {
   padding: 4px 8px;
   border-radius: 5px;
