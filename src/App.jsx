@@ -157,9 +157,18 @@ function App() {
 
   return (
     <>
-      <button id="edit-btn" onClick={handleEditClick}>
-        {editable ? "Save" : "Edit"}
-      </button>
+      <div className="edit-print-btn-container">
+        <button className="btn edit-btn" onClick={handleEditClick}>
+          {editable ? "Save" : "Edit"}
+        </button>
+        {editable ? (
+          ""
+        ) : (
+          <button className="btn print-btn" onClick="">
+            Print
+          </button>
+        )}
+      </div>
       <div className="page">
         <Header editable={editable}></Header>
         <main>

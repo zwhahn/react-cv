@@ -20,7 +20,7 @@ body {
 }
 
 .page {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 40px;
   width: 8.5in;
   height: 11in;
@@ -116,16 +116,27 @@ input {
   line-height: 1.4rem;
 }
 
-#edit-btn {
-  position: absolute;
-  font-size: 1.4em;
-  padding: 10px 20px;
-  transform: translate(-130%, 90%);
+.edit-print-btn-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-#edit-btn:hover {
-  background-color: lightgreen;
-  transform: translate(-130%, 90%) scale(110%);
+.btn {
+  font-size: 1.4em;
+  padding: 10px 20px;
+}
+
+.btn:hover {
+  transform: scale(110%);
+}
+
+.edit-btn:hover {
+  background-color: rgba(135, 206, 250, 0.776);
+}
+
+.print-btn:hover {
+  background-color: lightgrey;
 }
 
 button {
@@ -156,6 +167,10 @@ button {
 
   .page {
     margin: 0;
+  }
+
+  .edit-print-btn-container {
+    height: 0px;
   }
 
   @page {
