@@ -144,3 +144,22 @@ button {
   background-color: lightcoral;
   transform: scale(110%);
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .page * {
+    visibility: visible;
+  }
+
+  .page {
+    margin: 0;
+  }
+
+  @page {
+    size: letter;
+    margin: 0;
+  }
+}
