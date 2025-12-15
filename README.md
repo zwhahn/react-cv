@@ -1,16 +1,28 @@
-# React + Vite
+# React CV
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Demo](https://zwhahn-react-cv.netlify.app/)
 
-Currently, two official plugins are available:
+This is a web application built with React where users can input their information and generate a CV/ resume. The format is based off my own resume that I have been using for years. All pre-populated information is also my own to showcase what a filled in resume might look like. It is hosted on Netlify.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application allows hyperlinks in the header and automatically adds a new blank bullet when entering Experience or Project description for a smooth user experience. The resume can be printed or downloaded.
 
-## React Compiler
+## Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### React Resume (left) vs Google Sheets Resume (right)
 
-## Expanding the ESLint configuration
+![Side-by-side resume comparison](./src/assets/side-by-side.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React
+- Vite
+- JavaScript
+- CSS
+- Netlify
+
+## Future Development
+
+- (!) Handle horizontal and vertical flow
+- Add local storage so reload does not override information
+- Allow section title editing
+- Add optional hyperlinks to projects
