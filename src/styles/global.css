@@ -46,6 +46,7 @@ li {
 }
 
 .h1-container {
+  margin-top: 20px;
   display: flex;
   align-self: center;
 }
