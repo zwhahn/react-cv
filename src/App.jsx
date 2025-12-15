@@ -164,7 +164,7 @@ function App() {
         {editable ? (
           ""
         ) : (
-          <button className="btn print-btn" onClick="">
+          <button className="btn print-btn" onClick={() => window.print()}>
             Print
           </button>
         )}
