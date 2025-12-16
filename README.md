@@ -46,7 +46,7 @@ npm run dev
 
 ## Future Development
 
-- (!) Handle horizontal and vertical overflow
+- (!) Handle horizontal and vertical overflow (pagination)
 - Add local storage so reload does not override information
 - Allow section title editing
 - Add optional hyperlinks to projects
