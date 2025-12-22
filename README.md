@@ -4,12 +4,12 @@
 
 ## Overview
 
-This is a web application built with React where users can input their information and generate a CV/ resume. The format is based off my own resume that I have been using for years. All pre-populated information is also my own to showcase what a filled in resume might look like. It is hosted on Netlify.
+A web application built with React where users can input their information and generate a CV/ resume. The format is based off my own resume that I have been using for years. All pre-populated information is also my own to showcase what a filled in resume might look like. It is hosted on Netlify.
 
 ## Features
 
 - Supports hyperlinks in the header
-- automatically adds a new blank bullet when entering Experience or Project description for a smooth user experience
+- Automatically adds a new blank bullet when entering Experience or Project description for a smooth user experience
 - Resume can be printed or downloaded from browser
 
 ## Preview
